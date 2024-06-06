@@ -1,3 +1,25 @@
+if [ -n "$DB_PORT" ]; then
+  export POSTGRES_PORT=$DB_PORT
+fi
+
+
+if [ -n "$DB_HOST" ]; then
+  export POSTGRES_HOST=$DB_HOST
+fi
+
+if [ -n "$DB" ]; then
+  export POSTGRES_DATABASE=$DB
+fi
+
+if [ -n "$DB_USERNAME" ]; then
+  export POSTGRES_USER=$DB_USERNAME
+fi
+
+if [ -n "$DB_PASSWORD" ]; then
+  export POSTGRES_PASSWORD=$DB_PASSWORD
+fi
+
+
 if [ -z "$S3_BUCKET" ]; then
   echo "You need to set the S3_BUCKET environment variable."
   exit 1
